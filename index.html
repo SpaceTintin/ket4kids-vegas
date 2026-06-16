@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Cierra's Birthday · Vegas 2026</title>
+<style>
+  :root {
+    --bg: #0a0612;
+    --bg2: #15092a;
+    --fg: #f5edff;
+    --muted: #a89bc4;
+    --accent: #ff3d8b;
+    --accent2: #7c5cff;
+    --gold: #f4c95d;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+    background: radial-gradient(1200px 800px at 20% 0%, #2a0f47 0%, transparent 60%),
+                radial-gradient(1000px 700px at 80% 100%, #1a0a3a 0%, transparent 55%),
+                var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  .gate {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  .gate-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+  }
+  .gate-card h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .gate-card p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .gate-card input[type=password] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.3);
+    color: var(--fg);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .gate-card input[type=password]:focus {
+    border-color: var(--accent);
+  }
+  .gate-card button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .gate-card button:active { transform: translateY(1px); }
+  .gate-err {
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 13px;
+    min-height: 18px;
+  }
+  .content {
+    display: none;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 96px;
+  }
+  .hero { padding: 24px 0 32px; }
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 7vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    max-width: 540px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 24px 8px;
+    margin: 20px 0;
+  }
+  .card h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .day { padding: 16px 0; border-top: 1px solid var(--border); }
+  .day:first-of-type { border-top: 0; padding-top: 0; }
+  .day h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .date {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-right: 10px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(124,92,255,0.15);
+    vertical-align: middle;
+  }
+  ul { padding-left: 20px; margin: 8px 0 16px; }
+  li { margin: 6px 0; line-height: 1.5; }
+  p { line-height: 1.55; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .subhd {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 8px;
+    font-weight: 600;
+  }
+  ul.price { list-style: none; padding: 0; margin: 0 0 8px; }
+  ul.price li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  ul.price li:last-child { border-bottom: 0; }
+  .pick {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .pick-tag {
+    margin-left: auto;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255,61,139,0.15);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .foot {
+    text-align: center;
+    padding: 32px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <form id="gate-form" class="gate-card" autocomplete="off">
+    <h1>🎰 Vegas, baby</h1>
+    <p>Enter the password to see the plan.</p>
+    <input id="pw" type="password" placeholder="Password" autofocus autocapitalize="off" autocorrect="off" spellcheck="false" />
+    <button type="submit">Unlock</button>
+    <div id="err" class="gate-err"></div>
+  </form>
+</div>
+
+<main id="content" class="content"></main>
+
+<script>
+(function () {
+  const PAYLOAD = "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";
+  const ITER = 250000;
+
+  const $ = (id) => document.getElementById(id);
+  const enc = new TextEncoder();
+  const dec = new TextDecoder();
+
+  function b64ToBytes(b64) {
+    const bin = atob(b64);
+    const out = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  async function deriveKey(password, salt) {
+    const baseKey = await crypto.subtle.importKey(
+      "raw", enc.encode(password), { name: "PBKDF2" }, false, ["deriveKey"]
+    );
+    return crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt, iterations: ITER, hash: "SHA-256" },
+      baseKey,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["decrypt"]
+    );
+  }
+
+  async function tryUnlock(password) {
+    const raw = b64ToBytes(PAYLOAD);
+    const salt = raw.slice(0, 16);
+    const iv = raw.slice(16, 28);
+    const ct = raw.slice(28);
+    const key = await deriveKey(password, salt);
+    const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ct);
+    return dec.decode(pt);
+  }
+
+  $("gate-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const pw = $("pw").value;
+    $("err").textContent = "";
+    try {
+      const html = await tryUnlock(pw);
+      $("content").innerHTML = html;
+      $("gate").style.display = "none";
+      $("content").style.display = "block";
+      try { sessionStorage.setItem("ket4kids:pw", pw); } catch (_) {}
+    } catch (_) {
+      $("err").textContent = "Nope. Try again.";
+      $("pw").select();
+    }
+  });
+
+  try {
+    const saved = sessionStorage.getItem("ket4kids:pw");
+    if (saved) {
+      tryUnlock(saved).then((html) => {
+        $("content").innerHTML = html;
+        $("gate").style.display = "none";
+        $("content").style.display = "block";
+      }).catch(() => {});
+    }
+  } catch (_) {}
+})();
+</script>
+
+</body>
+</html>

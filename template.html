@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Cierra's Birthday · Vegas 2026</title>
+<style>
+  :root {
+    --bg: #0a0612;
+    --bg2: #15092a;
+    --fg: #f5edff;
+    --muted: #a89bc4;
+    --accent: #ff3d8b;
+    --accent2: #7c5cff;
+    --gold: #f4c95d;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+    background: radial-gradient(1200px 800px at 20% 0%, #2a0f47 0%, transparent 60%),
+                radial-gradient(1000px 700px at 80% 100%, #1a0a3a 0%, transparent 55%),
+                var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  .gate {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  .gate-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+  }
+  .gate-card h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+  .gate-card p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .gate-card input[type=password] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(0,0,0,0.3);
+    color: var(--fg);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .gate-card input[type=password]:focus {
+    border-color: var(--accent);
+  }
+  .gate-card button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .gate-card button:active { transform: translateY(1px); }
+  .gate-err {
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 13px;
+    min-height: 18px;
+  }
+  .content {
+    display: none;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 24px 96px;
+  }
+  .hero { padding: 24px 0 32px; }
+  .kicker {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 7vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .accent {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+    max-width: 540px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 24px 8px;
+    margin: 20px 0;
+  }
+  .card h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  .day { padding: 16px 0; border-top: 1px solid var(--border); }
+  .day:first-of-type { border-top: 0; padding-top: 0; }
+  .day h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .date {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-right: 10px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(124,92,255,0.15);
+    vertical-align: middle;
+  }
+  ul { padding-left: 20px; margin: 8px 0 16px; }
+  li { margin: 6px 0; line-height: 1.5; }
+  p { line-height: 1.55; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .subhd {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 8px;
+    font-weight: 600;
+  }
+  ul.price { list-style: none; padding: 0; margin: 0 0 8px; }
+  ul.price li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  ul.price li:last-child { border-bottom: 0; }
+  .pick {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .pick-tag {
+    margin-left: auto;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255,61,139,0.15);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .foot {
+    text-align: center;
+    padding: 32px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <form id="gate-form" class="gate-card" autocomplete="off">
+    <h1>🎰 Vegas, baby</h1>
+    <p>Enter the password to see the plan.</p>
+    <input id="pw" type="password" placeholder="Password" autofocus autocapitalize="off" autocorrect="off" spellcheck="false" />
+    <button type="submit">Unlock</button>
+    <div id="err" class="gate-err"></div>
+  </form>
+</div>
+
+<main id="content" class="content"></main>
+
+<script>
+(function () {
+  const PAYLOAD = "__ENCRYPTED_BLOB__";
+  const ITER = 250000;
+
+  const $ = (id) => document.getElementById(id);
+  const enc = new TextEncoder();
+  const dec = new TextDecoder();
+
+  function b64ToBytes(b64) {
+    const bin = atob(b64);
+    const out = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  async function deriveKey(password, salt) {
+    const baseKey = await crypto.subtle.importKey(
+      "raw", enc.encode(password), { name: "PBKDF2" }, false, ["deriveKey"]
+    );
+    return crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt, iterations: ITER, hash: "SHA-256" },
+      baseKey,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["decrypt"]
+    );
+  }
+
+  async function tryUnlock(password) {
+    const raw = b64ToBytes(PAYLOAD);
+    const salt = raw.slice(0, 16);
+    const iv = raw.slice(16, 28);
+    const ct = raw.slice(28);
+    const key = await deriveKey(password, salt);
+    const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ct);
+    return dec.decode(pt);
+  }
+
+  $("gate-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const pw = $("pw").value;
+    $("err").textContent = "";
+    try {
+      const html = await tryUnlock(pw);
+      $("content").innerHTML = html;
+      $("gate").style.display = "none";
+      $("content").style.display = "block";
+      try { sessionStorage.setItem("ket4kids:pw", pw); } catch (_) {}
+    } catch (_) {
+      $("err").textContent = "Nope. Try again.";
+      $("pw").select();
+    }
+  });
+
+  try {
+    const saved = sessionStorage.getItem("ket4kids:pw");
+    if (saved) {
+      tryUnlock(saved).then((html) => {
+        $("content").innerHTML = html;
+        $("gate").style.display = "none";
+        $("content").style.display = "block";
+      }).catch(() => {});
+    }
+  } catch (_) {}
+})();
+</script>
+
+</body>
+</html>
